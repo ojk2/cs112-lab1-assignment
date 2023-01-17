@@ -1,9 +1,176 @@
 
 Assignment: CS112 Lab1
-Student names:
-Student userids:
+Student names: Owen Koh (ojk2)
+Student userids: 2635799
 
 -------------------------------------------
 
-Step 1. ----------------- <time> -----------------------
+Time indicates time started for each step.
 
+
+Step 1. ----------------- <9:53 am> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int user_grade;
+    cout << "Enter your grade." << endl;
+    cin >> user_grade;
+
+    if (user_grade >= 90) {
+        cout << "A" << endl;
+    }
+    else if (user_grade <= 90 and user_grade >= 80) {
+        cout << "B" << endl;
+    }
+    else if (user_grade <= 80 and user_grade >= 70) {
+        cout << "C" << endl;
+    }
+    else if (user_grade <= 70 and user_grade >= 60) {
+        cout << "D" << endl;
+    }
+    else {
+        cout << "F" << endl;
+    }
+    
+    return 0;
+}
+
+output:
+Enter your grade.
+70
+C
+
+Step 2. ----------------- <10:05 am> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string desired_plan;
+
+    cout << "Plan name? " << endl;
+    cin >> desired_plan;
+
+    int desired_months;
+    cout << "Number of months? " << endl;
+    cin >> desired_months;
+
+    if (desired_months < 2) {
+        cout << "The cost for your plan is $90." << endl;
+    }
+    if (desired_months >= 2 and desired_plan == "silver") {
+        cout << "The cost for your plan is $60." << endl;
+    }
+    if (desired_plan == "gold") {
+        if (desired_months <= 6 and desired_months >= 2) {
+            cout << "The cost for your plan is $70." << endl;
+        }
+        else if (desired_months > 6) {
+            cout << "The cost for your plan is $35" << endl;
+        }
+    }
+}
+
+output:
+Plan name? 
+silver
+Number of months? 
+5
+The cost for your plan is $60.
+
+Step 3. ----------------- <10:14 am> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+    string valid_plan1 = "silver";
+    string valid_plan2 = "gold";
+
+    string desired_plan;
+
+    cout << "Plan name? " << endl;
+    cin >> desired_plan;
+
+    while (desired_plan != "silver" and desired_plan != "gold") {
+            cout << "I'm sorry, " << desired_plan << " is not a known plan." << endl;
+            cin >> desired_plan;
+
+        }
+
+
+    int desired_months;
+    cout << "Number of months? " << endl;
+    cin >> desired_months;
+
+    if (desired_months < 2) {
+        cout << "The cost for your plan is $90." << endl;
+    }
+    if (desired_months >= 2 and desired_plan == "silver") {
+        cout << "The cost for your plan is $60." << endl;
+    }
+    if (desired_plan == "gold") {
+        if (desired_months <= 6 and desired_months >= 2) {
+            cout << "The cost for your plan is $70." << endl;
+        }
+        else if (desired_months > 6) {
+            cout << "The cost for your plan is $35" << endl;
+        }
+    }
+}
+
+output:
+Plan name? 
+9
+I'm sorry, 9 is not a known plan.
+gold
+Number of months? 
+91243
+The cost for your plan is $35
+
+Step 4. ----------------- <10:37> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    char user_letter;
+    cout << "Enter a single lowercase letter: " << endl;
+    cin >> user_letter;
+
+    switch(user_letter) {
+        case 'a':
+            cout << "The letter is a vowel." << endl;
+            break;
+        case 'e':
+            cout << "The letter is a vowel." << endl;
+            break;
+        case 'i':
+            cout << "The letter is a vowel." << endl;
+            break;
+        case 'o':
+            cout << "The letter is a vowel." << endl;
+            break;
+        case 'u':
+            cout << "The letter is a vowel." << endl;
+            break;
+        default:
+            cout << "The letter is a consonant." << endl;
+    }
+
+    return 0;
+}
+
+output:
+Enter a single lowercase letter: 
+y
+The letter is a consonant.
+
+
+Step 5. ----------------- <10:51 am> -----------------------
+Step 6. ----------------- <time> -----------------------
+Step 7. ----------------- <time> -----------------------
+Step 8. ----------------- <time> -----------------------
