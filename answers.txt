@@ -235,6 +235,7 @@ void print() {
     cout << "Hi" << endl;
 }
 
+
 bool checkLetter(char target_letter) {
     switch(target_letter) {
         case 'a':
