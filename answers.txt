@@ -164,13 +164,190 @@ int main() {
     return 0;
 }
 
-output:
+begin output: 
 Enter a single lowercase letter: 
 y
 The letter is a consonant.
+end output:
+
+FINISHED AT 10:51 am, resumed later at 4:04 pm
+
+Step 5. ----------------- <4:04 pm> -----------------------
+#include <iostream>
+#include <string>
+#include <cassert>
+using namespace std;
+
+int main() {
+    int values[8];
+
+    for (int i = 0; i < 8; i++) {
+        values[i] = i*7;
+    }
+
+    assert (values[0] == 0);
+    assert (values[3] == 21);
+    assert (values[7] == 49);
+
+    cout << "All tests passed!" << endl;
+    
+    return 0;
+}
+
+output:
+All tests passed!
+
+Finished 4:24 pm
+
+Step 6. ----------------- <10:49 pm> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    double value = 0.0;
+    double sum = 0;
+
+    double arr [100] = {};
+    for (int i = 0; i < 100; i++) {
+        arr[i] = value;
+        value += 0.1;
+    } 
+
+    for (int i = 99; i >= 0; i--){
+        sum = sum + arr[i];
+    }
+   
+    cout << sum << endl;
+    return 0;
+}
+
+output:
+495
 
 
-Step 5. ----------------- <10:51 am> -----------------------
-Step 6. ----------------- <time> -----------------------
-Step 7. ----------------- <time> -----------------------
-Step 8. ----------------- <time> -----------------------
+Step 7. ----------------- <11:25> -----------------------
+#include <iostream>
+#include <string>
+using namespace std;
+
+void print() {
+    cout << "Hi" << endl;
+}
+
+bool checkLetter(char target_letter) {
+    switch(target_letter) {
+        case 'a':
+            cout << "The letter is a vowel." << endl;
+            return true;
+            break;
+        case 'e':
+            cout << "The letter is a vowel." << endl;
+            return true;
+            break;
+        case 'i':
+            cout << "The letter is a vowel." << endl;
+            return true;
+            break;
+        case 'o':
+            cout << "The letter is a vowel." << endl;
+            return true;
+            break;
+        case 'u':
+            cout << "The letter is a vowel." << endl;
+            return true;
+            break;
+        default:
+            cout << "The letter is a consonant." << endl;
+            return false;
+            break;
+    }
+}
+
+
+int main() {
+    char user_letter;
+
+    cout << "Enter a single lowercase letter: " << endl;
+    cin >> user_letter;
+
+    checkLetter(user_letter);
+
+    bool result = checkLetter(user_letter);
+
+    cout << result << endl;
+
+    return 0;
+}
+
+output:
+Enter a single lowercase letter: 
+d
+The letter is a consonant.
+The letter is a consonant.
+0
+
+
+Step 8. ----------------- <11:42> -----------------------
+#include <iostream>
+using namespace std;
+#include <string>
+
+string getPlan() {
+        string name;
+        cout << "Choose plan " << endl;
+        cin >> name;
+    while ((name != "silver") && (name != "gold")) {
+        cout << "I'm sorry, " << name << " is not a known plan" << endl;
+        cout << "Choose plan " << endl;
+        cin >> name;
+    }
+    return name;
+}
+
+
+unsigned getMonth () {
+    unsigned num;
+    cout << "Enter Your Month: " << endl;
+    cin >> num;
+    return num;
+}
+
+int computeCost(string name, unsigned num) {
+    if (name == "silver") {    
+        if (num == 1){
+            return 90;
+            }
+        else{
+            return 60;
+            }
+    }
+    
+    else if (name == "gold") {
+        if (num == 1){
+            return 90;
+        }
+        else if (2 <= num  && num <= 6) {
+            return 70;
+        }
+        else{
+            return 35;
+            }
+        }
+}
+
+int main() {
+    string gp = getPlan();
+    unsigned gm = getMonth();
+    int cc = computeCost(gp,gm);
+    cout << "The cost of your plan is: $" << cc << endl; 
+
+    return 0;
+}
+
+output:
+Choose plan 
+gold
+Enter Your Month: 
+2345
+The cost of your plan is: $35

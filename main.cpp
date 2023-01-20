@@ -1,31 +1,55 @@
 #include <iostream>
-#include <string>
 using namespace std;
+#include <string>
+
+string getPlan() {
+        string name;
+        cout << "Choose plan " << endl;
+        cin >> name;
+    while ((name != "silver") && (name != "gold")) {
+        cout << "I'm sorry, " << name << " is not a known plan" << endl;
+        cout << "Choose plan " << endl;
+        cin >> name;
+    }
+    return name;
+}
+
+
+unsigned getMonth () {
+    unsigned num;
+    cout << "Enter Your Month: " << endl;
+    cin >> num;
+    return num;
+}
+
+int computeCost(string name, unsigned num) {
+    if (name == "silver") {    
+        if (num == 1){
+            return 90;
+            }
+        else{
+            return 60;
+            }
+    }
+    
+    else if (name == "gold") {
+        if (num == 1){
+            return 90;
+        }
+        else if (2 <= num  && num <= 6) {
+            return 70;
+        }
+        else{
+            return 35;
+            }
+        }
+}
 
 int main() {
-    char user_letter;
-    cout << "Enter a single lowercase letter: " << endl;
-    cin >> user_letter;
-
-    switch(user_letter) {
-        case 'a':
-            cout << "The letter is a vowel." << endl;
-            break;
-        case 'e':
-            cout << "The letter is a vowel." << endl;
-            break;
-        case 'i':
-            cout << "The letter is a vowel." << endl;
-            break;
-        case 'o':
-            cout << "The letter is a vowel." << endl;
-            break;
-        case 'u':
-            cout << "The letter is a vowel." << endl;
-            break;
-        default:
-            cout << "The letter is a consonant." << endl;
-    }
+    string gp = getPlan();
+    unsigned gm = getMonth();
+    int cc = computeCost(gp,gm);
+    cout << "The cost of your plan is: $" << cc << endl; 
 
     return 0;
 }
